@@ -1,0 +1,16 @@
+@startuml
+actor Utilisateur As U
+application Application As A
+interprèteur interprèteur As I
+
+Alt scenario du choix de destination
+
+U -> I: L'utilisateur ajoute dans la ligne de commande -d ou --destination suivit de l'emplacement fichier de destination
+U -> I: L'utilisateur lance la commande
+I -> A: La destination est stockée dans une constante au sein de l'application
+A -> A: A la fin de la création du package, une arborescence est présente sur le système de fichier à partir de la destination donnée 
+end
+
+
+
+@enduml
