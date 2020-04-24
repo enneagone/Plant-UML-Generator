@@ -1,0 +1,20 @@
+@startuml
+actor Utilisateur As U
+participant ApplicationGUI As AG
+participant Application As A
+
+Alt scenario d'utilisation du logiciel
+U ->> AG: l'utilisateur ouvre l'application
+U ->> AG: l'utilisateur  upload un fichier a convertir
+AG -> A: envoie le fichier a convertir
+A->A: verification de la conformité
+Else si le fichier est conforme
+A->A: convertie le fichier
+A->AG: renvoie le fichier convertie
+AG->U: affiche le fichier convertie
+Else si le fichier n'est pas conforme
+A->AG: renvoie une erreur
+AG->U: affiche l'erreur
+end
+
+@enduml
