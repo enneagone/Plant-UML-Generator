@@ -1,0 +1,24 @@
+@startuml
+
+participant Application As A
+participant FileInput As FI
+participant FileOutput As FO
+
+A ->> FI : open file 
+A -> A : Analyse du fichier d'entré
+A -> A : Traitement des donées
+A -> A : Priorisasion de la creation des objets
+A -> A : detection des libs essentielles aux objets
+
+activate FO
+A -> FO : Creation de l'objet
+A -> FO : Ecriture du code 
+
+Alt Si l'utilisateur a demndé la generation de la documentation
+A -> FO : Ecriture de la documentation du code
+end
+
+A -> FO : Positionement de la class dans son package
+
+
+@enduml
