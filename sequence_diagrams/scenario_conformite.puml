@@ -1,0 +1,15 @@
+@startuml
+actor Utilisateur As U
+participant Application As A
+
+Alt scenario de conformite du fichier
+U ->A: L'utilisateur indique le fichier a generer
+Alt verification contenu conforme
+A->>A: include scenario de convertion
+Else si contenu non conforme
+A->>U: indique presence d'elements incorrecte
+end
+Else si le fichier non conforme
+A->>U: indique que le fichier n'est pas de type puml
+end
+@enduml
